@@ -26,10 +26,38 @@ class App extends Component {
 
         <BrowserRouter>
       <div className="App">
-          <Route path="/" component={User}/>
+          {/*<Route path="/" component={User}/>*/}
 
 
           {/*<Route to="/"  component={Home}/>*/}
+
+
+
+
+
+
+          <Nav/>
+          <div className="container-fluid">
+              <div className="row p-2">
+                  <div className="col-xl-3 p-3 ">
+                      {/*//profile*/}
+                      <Profile/>
+                  </div>
+                  <div className="col-xl-6 p-3 ">
+                      {/*//posts*/}
+                      <Posts/>
+                  </div>
+                  <div className=" col-xl-3 p-3 r">
+
+                      <Extra/>
+
+                  </div>
+
+              </div>
+
+
+
+          </div>
 
       </div>
         </BrowserRouter>

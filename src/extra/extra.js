@@ -20,8 +20,12 @@ class extra extends React.Component{
 
 
 
-        images:'',
-        currIndex:-1
+        images:
+            <CSSTransition   timeout={1500}>
+                <img src={require("../Assets/sopns.jpg")} className=" animated bounceIn m-2 spons-pic img-responsive"/>
+            </CSSTransition>
+        ,
+        currIndex:0
 
 
 
@@ -48,8 +52,8 @@ class extra extends React.Component{
 
             let image=
 
-                <CSSTransition key={newIndex} classNames="animate-left"  timeout={1500}>
-                    <img src={this.state.urls[newIndex]} className=" m-2 spons-pic img-responsive"/>
+                <CSSTransition key={newIndex}   timeout={1500}>
+                    <img src={this.state.urls[newIndex]} className=" animated bounceIn m-2 spons-pic img-responsive"/>
                 </CSSTransition>;
 
 
@@ -63,22 +67,14 @@ class extra extends React.Component{
 
 
         }
-    }
 
-
-
-    onPrev =()=>{
-
-        console.log('currIndex: '+this.state.currIndex);
-
-        let newIndex = this.state.currIndex;
-        if(newIndex>0) {
-            newIndex--;
-
+        else
+        {
+            let newIndex = 0;
             let image=
 
-                <CSSTransition key={newIndex} classNames="animate-bottom-down"  timeout={1000}>
-                    <img src={this.state.urls[newIndex]} className=" m-2 spons-pic img-responsive"/>
+                <CSSTransition key={newIndex}   timeout={1500}>
+                    <img src={this.state.urls[newIndex]} className=" animated bounceIn m-2 spons-pic img-responsive"/>
                 </CSSTransition>;
 
 
@@ -90,12 +86,11 @@ class extra extends React.Component{
 
             });
 
-
-
-
-
         }
     }
+
+
+
 
 
 
@@ -123,15 +118,13 @@ class extra extends React.Component{
                 <div className="card ">
                     <div className="card-body text-left">
                         <strong>Sponsered</strong>
-                        <div className="p-2 ">
-                            <TransitionGroup className="d-flex flex-row image">
+                        <div className="p-2  image">
+
                                 {this.state.images}
-                            </TransitionGroup>
 
                         </div>
 
                         <button type="button"  onClick={this.onNext} className="btn btn-outline-primary m-1">Next</button>
-                        <button type="button" onClick={this.onPrev} className="btn btn-outline-primary m-1">Prev</button>
 
                         <p className="p-2">
                             It might be time to visit Iceland. Iceland is so chill, and everything looks cool here.
