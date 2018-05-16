@@ -9,8 +9,8 @@ class nav extends React.Component{
         buttonClick:false
     }
 
-    btnAnimate= ()=>{
-        let newClick=!this.state.buttonClick;
+    btnAnimate= () => {
+        let newClick = !this.state.buttonClick;
         this.setState({
             buttonClick:newClick
         })

@@ -21,8 +21,8 @@ class extra extends React.Component{
 
 
         images:
-            <CSSTransition   timeout={1500}>
-                <img src={require("../Assets/sopns.jpg")} className=" animated bounceIn m-2 spons-pic img-responsive"/>
+            <CSSTransition classNames="animate-left"  timeout={1500}>
+                <img src={require("../Assets/sopns.jpg")} className="  m-2 spons-pic img-responsive"/>
             </CSSTransition>
         ,
         currIndex:0
@@ -52,8 +52,8 @@ class extra extends React.Component{
 
             let image=
 
-                <CSSTransition key={newIndex}   timeout={1500}>
-                    <img src={this.state.urls[newIndex]} className=" animated bounceIn m-2 spons-pic img-responsive"/>
+                <CSSTransition key={newIndex} classNames="animate-left"  timeout={1500}>
+                    <img src={this.state.urls[newIndex]} className="  m-2 spons-pic img-responsive"/>
                 </CSSTransition>;
 
 
@@ -73,8 +73,8 @@ class extra extends React.Component{
             let newIndex = 0;
             let image=
 
-                <CSSTransition key={newIndex}   timeout={1500}>
-                    <img src={this.state.urls[newIndex]} className=" animated bounceIn m-2 spons-pic img-responsive"/>
+                <CSSTransition key={newIndex} classNames="animate-left"  timeout={1500}>
+                    <img src={this.state.urls[newIndex]} className="  m-2 spons-pic img-responsive"/>
                 </CSSTransition>;
 
 
@@ -120,7 +120,10 @@ class extra extends React.Component{
                         <strong>Sponsered</strong>
                         <div className="p-2  image">
 
+                                <TransitionGroup>
                                 {this.state.images}
+                                </TransitionGroup>
+
 
                         </div>
 
